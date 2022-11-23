@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const app = express()
 
 let ıtemList =["Shoping", "Codding","Go to GYM"];
-
+let workItems = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -22,11 +22,11 @@ let today  = new Date();
 
     let numberDay = today.getDay();
  
-    const daysOfWeek = ["Pazar","Pazartesi", "Salı", "Çarşamba", "perşembe", "Cuma", "Cumartesi"]
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let day = daysOfWeek[numberDay];
 
-    res.render("index", {goDay: day, addItems: ıtemList});
+    res.render("index", {listTitle: day, addItems: ıtemList});
 
     
 
@@ -34,13 +34,29 @@ let today  = new Date();
 
 app.post("/", (req, res) => {
 
-    let newItem = req.body.newItem;
+    console.log(req.body)
 
-    ıtemList.push(newItem);
+    let ıtem = req.body.newItem;
+
+    if(req.body.list === "Work"){
+      workItems.push(ıtem);
+
+      res.redirect("/work");
+    } else
+
+    ıtemList.push(ıtem);
 
     res.redirect("/")
     
 })
+
+app.get('/Work', (req, res) => {
+
+
+  res.render("index", {listTitle: "Work", addItems: workItems });
+  
+  });
+
 
 app.listen(3000, () => {
   console.log(`Example app listening on port 3000`)
