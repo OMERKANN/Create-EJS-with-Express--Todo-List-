@@ -1,2 +1,2 @@
-# Create-EJS-with-Express--Todo-List-
+# EJS-todoList
 I would like you to evaluate todo lsit backend application project on express server using EJS

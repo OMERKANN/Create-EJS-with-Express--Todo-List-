@@ -1,7 +1,7 @@
 
 
 html {
-    background-color: #0d38e2;
+    background-color: #f3f3f3;
     background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
     min-height: 1000px;
     font-family: 'helvetica neue';
@@ -69,7 +69,27 @@ html {
     padding-bottom: 6px;
     border-width: 0;
   }
+
+  .btn{
+    min-height: 50px;
+    width: 60px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #A683E3;
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-width: 0;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
   
+
+  .btn:hover{
+    color: #00204a;
+  }
+
   input[type="text"] {
     text-align: center;
     height: 60px;
@@ -96,4 +116,5 @@ html {
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
   }
+  
   
