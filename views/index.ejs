@@ -19,13 +19,16 @@
     <div class="box">
     <ul>
                     
-        <% for ( var i = 0; i<addItems.length; i++) { %>
-                <div class="item">
-                   <input type="checkbox"> <p> <%= addItems[i] %> </p>
-                    </div>
-        <% } %>
-            
+        <% addItems.forEach(function(creatItem)
+        { %>
+            <div class="item">
+                <input type="checkbox">
+                 <p> <%= creatItem.name%> </p>
+                 </div>
+            <% }) %>
 
+
+    
      </ul>
 
     
